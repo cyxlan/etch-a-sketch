@@ -1,7 +1,10 @@
+const root = document.querySelector(':root');
 const gridContainer = document.querySelector('.grid-container');
 const newGridBtn = document.querySelector('#new-grid');
 
 function createGrid(size) {
+  // set new grid square size
+  root.style.setProperty('--square-size', `calc(600px / ${size})`);
   // add amount of grid square divs for given grid size
   for (let i = 0; i < size * size; i++) {
     let gridSquare = document.createElement('div');
@@ -39,5 +42,8 @@ function getGridSize() {
 
 let gridSize;
 newGridBtn.addEventListener('click', () => {
+  // remove existing grid squares
+  gridContainer.replaceChildren();
   gridSize = getGridSize();
+  createGrid(gridSize);
 })
