@@ -1,12 +1,16 @@
 const gridContainer = document.querySelector('.grid-container');
 const newGridBtn = document.querySelector('#new-grid');
 
-// add 256 (16x16) grid squares to page
-for (let i = 0; i < 256; i++) {
-  let gridSquare = document.createElement('div');
-  gridSquare.classList.add('grid-square');
-  gridContainer.appendChild(gridSquare);
+function createGrid(size) {
+  // add amount of grid square divs for given grid size
+  for (let i = 0; i < size * size; i++) {
+    let gridSquare = document.createElement('div');
+    gridSquare.classList.add('grid-square');
+    gridContainer.appendChild(gridSquare);
+  }
 }
+
+createGrid(16);
 
 // when grid square is hovered, turn background black
 const gridSquares = document.querySelectorAll('.grid-square');
