@@ -11,6 +11,8 @@ function createGrid(size) {
     gridSquare.classList.add('grid-square');
     gridContainer.appendChild(gridSquare);
   }
+  // return list of new grid squares
+  return document.querySelectorAll(".grid-square");
 }
 
 function colourSquaresOnHover(gridSquares, colour) {
@@ -39,8 +41,7 @@ function getGridSize() {
   return gridSize;
 }
 
-createGrid(16);
-let gridSquares = document.querySelectorAll('.grid-square');
+gridSquares = createGrid(16);
 colourSquaresOnHover(gridSquares, '#000');
 
 let gridSize;
@@ -48,5 +49,6 @@ newGridBtn.addEventListener('click', () => {
   // remove existing grid squares
   gridContainer.replaceChildren();
   gridSize = getGridSize();
-  createGrid(gridSize);
+  gridSquares = createGrid(gridSize);
+  colourSquaresOnHover(gridSquares, '#000');
 })
