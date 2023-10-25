@@ -1,6 +1,7 @@
 const root = document.querySelector(':root');
 const gridContainer = document.querySelector('.grid-container');
 const newGridBtn = document.querySelector('#new-grid');
+const randomColourBtn = document.querySelector('#random-colour');
 
 function createGrid(size) {
   // set new grid square size
@@ -41,6 +42,9 @@ function getGridSize() {
   return gridSize;
 }
 
+function getRandomColour() {
+}
+
 gridSquares = createGrid(16);
 colourSquaresOnHover(gridSquares, '#000');
 
@@ -51,4 +55,8 @@ newGridBtn.addEventListener('click', () => {
   gridSize = getGridSize();
   gridSquares = createGrid(gridSize);
   colourSquaresOnHover(gridSquares, '#000');
+})
+
+randomColourBtn.addEventListener('click', () => {
+  getRandomColour()
 })
