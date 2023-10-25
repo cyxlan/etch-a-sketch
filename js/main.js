@@ -16,7 +16,24 @@ gridSquares.forEach((square) => {
   })
 })
 
+function getGridSize() {
+  gridSize = prompt('Enter side length of new grid (1-100):');
+  // if user clicked cancel, end function
+  if (gridSize === null) {
+    return;
+  }
+  else {
+    gridSize = Number(gridSize);
+    // if value is not an integer or not between 1-100, alert user & prompt again
+    if (!Number.isInteger(gridSize) || !(gridSize > 0 && gridSize <= 100)) {
+      alert("Please enter an integer from 1-100.")
+      gridSize = getGridSize();
+    }
+  }
+  return gridSize;
+}
+
 let gridSize;
 newGridBtn.addEventListener('click', () => {
-  gridSize = prompt('Enter new grid size:');
+  gridSize = getGridSize();
 })
