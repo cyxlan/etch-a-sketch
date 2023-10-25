@@ -51,8 +51,9 @@ function getRandomColour() {
   return `rgb(${getRandomValue()}, ${getRandomValue()}, ${getRandomValue()})`;
 }
 
+let colour = '#000';
 gridSquares = createGrid(16);
-colourSquaresOnHover(gridSquares, '#000');
+colourSquaresOnHover(gridSquares, colour);
 
 let gridSize;
 newGridBtn.addEventListener('click', () => {
@@ -60,9 +61,10 @@ newGridBtn.addEventListener('click', () => {
   gridContainer.replaceChildren();
   gridSize = getGridSize();
   gridSquares = createGrid(gridSize);
-  colourSquaresOnHover(gridSquares, '#000');
+  colourSquaresOnHover(gridSquares, colour);
 })
 
 randomColourBtn.addEventListener('click', () => {
   let colour = getRandomColour()
+  colourSquaresOnHover(gridSquares, colour);
 })
