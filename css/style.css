@@ -3,11 +3,14 @@
 }
 
 .grid-container {
+  /* add border to outside, so grid squares fit inside */
+  box-sizing: content-box;
   width: 600px;
   height: 600px;
   border: 1px solid #000;
   margin: 0 auto;
   display: flex;
+  flex-wrap: wrap;
 }
 .grid-square {
   width: calc(600px / 16);
