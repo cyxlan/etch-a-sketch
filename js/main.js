@@ -1,4 +1,5 @@
 const gridContainer = document.querySelector('.grid-container');
+const newGridBtn = document.querySelector('#new-grid');
 
 // add 256 (16x16) grid squares to page
 for (let i = 0; i < 256; i++) {
@@ -13,4 +14,9 @@ gridSquares.forEach((square) => {
   square.addEventListener('mouseenter', () => {
     square.style.backgroundColor = '#000';
   })
+})
+
+let gridSize;
+newGridBtn.addEventListener('click', () => {
+  gridSize = prompt('Enter new grid size:');
 })
