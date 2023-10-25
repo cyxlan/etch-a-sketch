@@ -6,3 +6,11 @@ for (let i = 0; i < 256; i++) {
   gridSquare.classList.add('grid-square');
   gridContainer.appendChild(gridSquare);
 }
+
+// when grid square is hovered, turn background black
+const gridSquares = document.querySelectorAll('.grid-square');
+gridSquares.forEach((square) => {
+  square.addEventListener('mouseenter', () => {
+    square.style.backgroundColor = '#000';
+  })
+})
