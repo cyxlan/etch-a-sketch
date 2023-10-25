@@ -13,15 +13,14 @@ function createGrid(size) {
   }
 }
 
-createGrid(16);
-
-// when grid square is hovered, turn background black
-const gridSquares = document.querySelectorAll('.grid-square');
-gridSquares.forEach((square) => {
-  square.addEventListener('mouseenter', () => {
-    square.style.backgroundColor = '#000';
+function colourSquaresOnHover(gridSquares, colour) {
+  // when grid square is hovered, change background colour
+  gridSquares.forEach((square) => {
+    square.addEventListener('mouseenter', () => {
+      square.style.backgroundColor = '#000';
+    })
   })
-})
+}
 
 function getGridSize() {
   gridSize = prompt('Enter side length of new grid (1-100):');
@@ -39,6 +38,10 @@ function getGridSize() {
   }
   return gridSize;
 }
+
+createGrid(16);
+let gridSquares = document.querySelectorAll('.grid-square');
+colourSquaresOnHover(gridSquares, '#000');
 
 let gridSize;
 newGridBtn.addEventListener('click', () => {
