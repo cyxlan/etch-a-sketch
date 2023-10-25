@@ -43,6 +43,12 @@ function getGridSize() {
 }
 
 function getRandomColour() {
+  // get a random integer between 0-255
+  function getRandomValue() {
+    return Math.floor(Math.random() * 256);
+  }
+  // return a randomly generated rgb colour
+  return `rgb(${getRandomValue()}, ${getRandomValue()}, ${getRandomValue()})`;
 }
 
 gridSquares = createGrid(16);
@@ -58,5 +64,5 @@ newGridBtn.addEventListener('click', () => {
 })
 
 randomColourBtn.addEventListener('click', () => {
-  getRandomColour()
+  let colour = getRandomColour()
 })
