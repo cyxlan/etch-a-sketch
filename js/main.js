@@ -73,6 +73,13 @@ newGridBtn.addEventListener('click', () => {
 })
 
 randomColourBtn.addEventListener('click', () => {
-  colour = 'random';
+  if (colour !== 'random') {
+    randomColourBtn.textContent = 'Black';
+    colour = 'random';
+  }
+  else {
+    randomColourBtn.textContent = 'Random colour';
+    colour = '#000';
+  }
   colourSquaresOnHover(gridSquares, colour);
 })
