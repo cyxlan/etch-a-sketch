@@ -20,7 +20,12 @@ function colourSquaresOnHover(gridSquares, colour) {
   // when grid square is hovered, change background colour
   gridSquares.forEach((square) => {
     square.addEventListener('mouseenter', () => {
-      square.style.backgroundColor = colour;
+      if (colour === 'random') {
+        square.style.backgroundColor = getRandomColour();
+      }
+      else {
+        square.style.backgroundColor = colour;
+      }
     })
   })
 }
@@ -65,6 +70,6 @@ newGridBtn.addEventListener('click', () => {
 })
 
 randomColourBtn.addEventListener('click', () => {
-  let colour = getRandomColour()
+  colour = 'random';
   colourSquaresOnHover(gridSquares, colour);
 })
