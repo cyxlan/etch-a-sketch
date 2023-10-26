@@ -61,6 +61,17 @@ function getRandomColour() {
 function changeOpacity(rgb, opacity) {
   return `rgba${rgb.slice(3, -1)},${opacity})`;
 }
+// get opacity value of rgb/rgba colour
+function getOpacity(colour) {
+  if (colour.slice(0, 4) === 'rgba') {
+    // slice out rgba opacity value (between last comma & closing parentheses)
+    let lastComma = colour.lastIndexOf(',');
+    return colour.slice(lastComma+1, -1);
+  }
+  else {
+    return 1;
+  }
+}
 
 let colour = '#000';
 gridSquares = createGrid(16);
@@ -91,5 +102,5 @@ randomColourBtn.addEventListener('click', () => {
 })
 
 opacityBtn.addEventListener('click', () => {
-  
+
 })
