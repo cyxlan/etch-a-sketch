@@ -62,11 +62,14 @@ colourSquaresOnHover(gridSquares, colour);
 
 let gridSize;
 newGridBtn.addEventListener('click', () => {
-  // remove existing grid squares
-  gridContainer.replaceChildren();
   gridSize = getGridSize();
-  gridSquares = createGrid(gridSize);
-  colourSquaresOnHover(gridSquares, colour);
+  // if user entered a size
+  if (gridSize !== undefined) {
+    // remove existing grid squares
+    gridContainer.replaceChildren();
+    gridSquares = createGrid(gridSize);
+    colourSquaresOnHover(gridSquares, colour);
+  }
 })
 
 randomColourBtn.addEventListener('click', () => {
