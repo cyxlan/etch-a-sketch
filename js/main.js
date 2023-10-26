@@ -44,7 +44,7 @@ function colourSquare(e) {
   square.style.backgroundColor = newSquareColour;
 }
 
-function colourSquaresOnHover(gridSquares, colour, randomOn, opacityOn) {
+function colourSquaresOnHover() {
   // when grid square is hovered, change background colour
   gridSquares.forEach((square) => {
     square.addEventListener('mouseenter', colourSquare);
@@ -97,7 +97,7 @@ let colour = 'rgb(0,0,0)';
 let randomOn = false;
 let opacityOn = false;
 gridSquares = createGrid(16);
-colourSquaresOnHover(gridSquares, colour, randomOn, opacityOn);
+colourSquaresOnHover();
 
 let gridSize;
 newGridBtn.addEventListener('click', () => {
@@ -107,7 +107,7 @@ newGridBtn.addEventListener('click', () => {
     // remove existing grid squares
     gridContainer.replaceChildren();
     gridSquares = createGrid(gridSize);
-    colourSquaresOnHover(gridSquares, colour, randomOn, opacityOn);
+    colourSquaresOnHover();
   }
 })
 
@@ -120,7 +120,7 @@ randomColourBtn.addEventListener('click', () => {
     randomColourBtn.textContent = 'Random colour';
     randomOn = false;
   }
-  colourSquaresOnHover(gridSquares, colour, randomOn, opacityOn);
+  colourSquaresOnHover();
 })
 
 opacityBtn.addEventListener('click', () => {
@@ -132,5 +132,5 @@ opacityBtn.addEventListener('click', () => {
     opacityBtn.textContent = 'Opacity'
     opacityOn = false;
   }
-  colourSquaresOnHover(gridSquares, colour, randomOn, opacityOn);
+  colourSquaresOnHover();
 })
