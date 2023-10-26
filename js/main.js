@@ -1,6 +1,7 @@
 const root = document.querySelector(':root');
 const gridContainer = document.querySelector('.grid-container');
 const newGridBtn = document.querySelector('#new-grid');
+const clearGridBtn = document.querySelector('#clear-grid');
 const randomColourBtn = document.querySelector('#random-colour');
 const opacityBtn = document.querySelector('#opacity');
 
@@ -111,6 +112,12 @@ newGridBtn.addEventListener('click', () => {
     gridSquares = createGrid(gridSize);
     colourSquaresOnHover();
   }
+})
+
+clearGridBtn.addEventListener('click', () => {
+  gridSquares.forEach((square) => {
+    square.style.backgroundColor = "";
+  })
 })
 
 randomColourBtn.addEventListener('click', () => {
