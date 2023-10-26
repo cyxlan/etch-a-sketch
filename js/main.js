@@ -22,11 +22,28 @@ function colourSquaresOnHover(gridSquares, colour, randomOn, opacityOn) {
   gridSquares.forEach((square) => {
     square.addEventListener('mouseenter', () => {
       if (randomOn) {
-        square.style.backgroundColor = getRandomColour();
+        newSquareColour = getRandomColour();
       }
       else {
-        square.style.backgroundColor = colour;
+        newSquareColour = colour;
       }
+      if (opacityOn) {
+        let currentSquareColour = square.style.backgroundColor;
+        // if the current square has not been coloured yet
+        if (currentSquareColour === '') {
+          // start the opacity at 10%
+          newSquareColour = changeOpacity(colour, 0.1);
+        }
+        else {
+          let currentOpacity = getOpacity(currentSquareColour);
+          if (currentOpacity !== 1.0) {
+            // increase the opacity by 10% (round to avoid decimal math issues)
+            let newOpacity = (currentOpacity + 0.1).toFixed(1)
+            newSquareColour = changeOpacity(colour, newOpacity);
+          }
+        }
+      }
+      square.style.backgroundColor = newSquareColour;
     })
   })
 }
@@ -66,14 +83,14 @@ function getOpacity(colour) {
   if (colour.slice(0, 4) === 'rgba') {
     // slice out rgba opacity value (between last comma & closing parentheses)
     let lastComma = colour.lastIndexOf(',');
-    return colour.slice(lastComma+1, -1);
+    return Number(colour.slice(lastComma+1, -1));
   }
   else {
     return 1;
   }
 }
 
-let colour = '#000';
+let colour = 'rgb(0,0,0)';
 let randomOn = false;
 let opacityOn = false;
 gridSquares = createGrid(16);
