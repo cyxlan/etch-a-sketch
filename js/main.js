@@ -17,11 +17,11 @@ function createGrid(size) {
   return document.querySelectorAll(".grid-square");
 }
 
-function colourSquaresOnHover(gridSquares, colour) {
+function colourSquaresOnHover(gridSquares, colour, randomOn) {
   // when grid square is hovered, change background colour
   gridSquares.forEach((square) => {
     square.addEventListener('mouseenter', () => {
-      if (colour === 'random') {
+      if (randomOn) {
         square.style.backgroundColor = getRandomColour();
       }
       else {
@@ -74,8 +74,9 @@ function getOpacity(colour) {
 }
 
 let colour = '#000';
+let randomOn = false;
 gridSquares = createGrid(16);
-colourSquaresOnHover(gridSquares, colour);
+colourSquaresOnHover(gridSquares, colour, randomOn);
 
 let gridSize;
 newGridBtn.addEventListener('click', () => {
@@ -85,20 +86,20 @@ newGridBtn.addEventListener('click', () => {
     // remove existing grid squares
     gridContainer.replaceChildren();
     gridSquares = createGrid(gridSize);
-    colourSquaresOnHover(gridSquares, colour);
+    colourSquaresOnHover(gridSquares, colour, randomOn);
   }
 })
 
 randomColourBtn.addEventListener('click', () => {
-  if (colour !== 'random') {
-    randomColourBtn.textContent = 'Black';
-    colour = 'random';
+  if (!randomOn) {
+    randomColourBtn.textContent = 'Random colour off';
+    randomOn = true;
   }
   else {
     randomColourBtn.textContent = 'Random colour';
-    colour = '#000';
+    randomOn = false;
   }
-  colourSquaresOnHover(gridSquares, colour);
+  colourSquaresOnHover(gridSquares, colour, randomOn);
 })
 
 opacityBtn.addEventListener('click', () => {
