@@ -56,6 +56,11 @@ function getRandomColour() {
   return `rgb(${getRandomValue()}, ${getRandomValue()}, ${getRandomValue()})`;
 }
 
+// convert rgb colour to rgba colour with given opacity
+function changeOpacity(rgb, opacity) {
+  return `rgba${rgb.slice(3, -1)},${opacity})`;
+}
+
 let colour = '#000';
 gridSquares = createGrid(16);
 colourSquaresOnHover(gridSquares, colour);
