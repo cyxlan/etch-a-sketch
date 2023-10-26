@@ -99,10 +99,10 @@ function getOpacity(colour) {
 let colour = 'rgb(0,0,0)';
 let randomOn = false;
 let opacityOn = false;
-gridSquares = createGrid(16);
+let gridSize = 16;
+gridSquares = createGrid(gridSize);
 colourSquaresOnHover();
 
-let gridSize;
 newGridBtn.addEventListener('click', () => {
   gridSize = getGridSize();
   // if user entered a size
