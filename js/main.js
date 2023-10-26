@@ -2,6 +2,7 @@ const root = document.querySelector(':root');
 const gridContainer = document.querySelector('.grid-container');
 const newGridBtn = document.querySelector('#new-grid');
 const randomColourBtn = document.querySelector('#random-colour');
+const opacityBtn = document.querySelector('#opacity');
 
 function createGrid(size) {
   // set new grid square size
@@ -87,4 +88,8 @@ randomColourBtn.addEventListener('click', () => {
     colour = '#000';
   }
   colourSquaresOnHover(gridSquares, colour);
+})
+
+opacityBtn.addEventListener('click', () => {
+  
 })
