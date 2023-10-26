@@ -47,6 +47,8 @@ function colourSquare(e) {
 function colourSquaresOnHover() {
   // when grid square is hovered, change background colour
   gridSquares.forEach((square) => {
+    // remove existing settings first
+    square.removeEventListener('mouseenter', colourSquare);
     square.addEventListener('mouseenter', colourSquare);
   })
 }
