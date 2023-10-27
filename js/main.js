@@ -2,6 +2,7 @@ const root = document.querySelector(':root');
 const gridContainer = document.querySelector('.grid-container');
 const newGridBtn = document.querySelector('#new-grid');
 const clearGridBtn = document.querySelector('#clear-grid');
+const eraserBtn = document.querySelector('#eraser');
 const randomColourBtn = document.querySelector('#random-colour');
 const opacityBtn = document.querySelector('#opacity');
 
@@ -20,7 +21,10 @@ function createGrid(size) {
 
 function colourSquare(e) {
   let square = e.currentTarget;
-  if (randomOn) {
+  if (eraserOn) {
+    newSquareColour = '';
+  }
+  else if (randomOn) {
     newSquareColour = getRandomColour();
   }
   else {
@@ -97,6 +101,7 @@ function getOpacity(colour) {
 }
 
 let colour = 'rgb(0,0,0)';
+let eraserOn = false;
 let randomOn = false;
 let opacityOn = false;
 let gridSize = 16;
@@ -118,6 +123,17 @@ clearGridBtn.addEventListener('click', () => {
   gridSquares.forEach((square) => {
     square.style.backgroundColor = "";
   })
+})
+
+eraserBtn.addEventListener('click', () => {
+  if (!eraserOn) {
+    eraserBtn.textContent = 'Pen';
+    eraserOn = true;
+  }
+  else {
+    eraserBtn.textContent = 'Eraser';
+    eraserOn = false;
+  }
 })
 
 randomColourBtn.addEventListener('click', () => {
