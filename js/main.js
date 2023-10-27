@@ -163,34 +163,31 @@ gridLinesBtn.addEventListener('click', () => {
 eraserBtn.addEventListener('click', () => {
   if (!eraserOn) {
     eraserBtn.textContent = 'Pen';
-    eraserOn = true;
   }
   else {
     eraserBtn.textContent = 'Eraser';
-    eraserOn = false;
   }
+  eraserOn = !eraserOn;
 })
 
 randomColourBtn.addEventListener('click', () => {
   if (!randomOn) {
     randomColourBtn.textContent = 'Random colour off';
-    randomOn = true;
   }
   else {
     randomColourBtn.textContent = 'Random colour';
-    randomOn = false;
   }
+  randomOn = !randomOn;
   colourSquaresOnHover();
 })
 
 opacityBtn.addEventListener('click', () => {
   if (!opacityOn) {
     opacityBtn.textContent = 'Opacity off';
-    opacityOn = true;
   }
   else {
     opacityBtn.textContent = 'Opacity'
-    opacityOn = false;
   }
+  opacityOn = !opacityOn;
   colourSquaresOnHover();
 })
