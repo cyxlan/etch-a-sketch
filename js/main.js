@@ -86,9 +86,16 @@ function getRandomColour() {
   return `rgb(${getRandomValue()}, ${getRandomValue()}, ${getRandomValue()})`;
 }
 
-// convert rgb colour to rgba colour with given opacity
-function changeOpacity(rgb, opacity) {
-  return `rgba${rgb.slice(3, -1)},${opacity})`;
+// convert rgb/rgba colour to rgba colour with given opacity
+function changeOpacity(colour, opacity) {
+  if (colour.slice(0, 4) === 'rgba') {
+    // replace rgba opacity value (after last comma)
+    let lastComma = colour.lastIndexOf(',');
+    return `${colour.slice(0, lastComma)},${opacity})`;
+  }
+  else {
+    return `rgba${colour.slice(3, -1)},${opacity})`;
+  }
 }
 // get opacity value of rgb/rgba colour
 function getOpacity(colour) {
