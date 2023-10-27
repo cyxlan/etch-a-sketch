@@ -114,6 +114,16 @@ function getOpacity(colour) {
   }
 }
 
+function hexToRgb(hex) {
+  // split into 3
+  let splitHex = hex.match(/[a-f\d]{2}/gi);
+  // convert to rgb values
+  let r = parseInt(splitHex[0], 16);
+  let g = parseInt(splitHex[1], 16);
+  let b = parseInt(splitHex[2], 16);
+  return `rgb(${r},${g},${b})`;
+}
+
 let colour = 'rgb(0,0,0)';
 let eraserOn = false;
 let randomOn = false;
@@ -124,7 +134,7 @@ colourSquaresOnHover();
 
 // when colour picker is closed, update colour
 colourPicker.addEventListener('change', () => {
-  colour = colourPicker.value;
+  colour = hexToRgb(colourPicker.value);
 })
 
 newGridBtn.addEventListener('click', () => {
