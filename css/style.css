@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;800&display=swap');
+
 :root {
   --square-size: calc(600px / 16);
 }
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Playpen Sans', sans-serif;
+  text-align: center;
+  font-size: 72px;
+  font-weight: 800;
+  margin: 20px 0;
 }
 
 .grid-container {
