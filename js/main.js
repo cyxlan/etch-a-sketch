@@ -24,25 +24,27 @@ function colourSquare(e) {
   if (eraserOn) {
     newSquareColour = '';
   }
-  else if (randomOn) {
-    newSquareColour = getRandomColour();
-  }
   else {
-    newSquareColour = colour;
-  }
-  if (opacityOn) {
-    let currentSquareColour = square.style.backgroundColor;
-    // if the current square has not been coloured yet
-    if (currentSquareColour === '') {
-      // start the opacity at 10%
-      newSquareColour = changeOpacity(newSquareColour, 0.1);
+    if (randomOn) {
+      newSquareColour = getRandomColour();
     }
     else {
-      let currentOpacity = getOpacity(currentSquareColour);
-      if (currentOpacity !== 1.0) {
-        // increase the opacity by 10% (round to avoid decimal math issues)
-        let newOpacity = (currentOpacity + 0.1).toFixed(1)
-        newSquareColour = changeOpacity(newSquareColour, newOpacity);
+      newSquareColour = colour;
+    }
+    if (opacityOn) {
+      let currentSquareColour = square.style.backgroundColor;
+      // if the current square has not been coloured yet
+      if (currentSquareColour === '') {
+        // start the opacity at 10%
+        newSquareColour = changeOpacity(newSquareColour, 0.1);
+      }
+      else {
+        let currentOpacity = getOpacity(currentSquareColour);
+        if (currentOpacity !== 1.0) {
+          // increase the opacity by 10% (round to avoid decimal math issues)
+          let newOpacity = (currentOpacity + 0.1).toFixed(1)
+          newSquareColour = changeOpacity(newSquareColour, newOpacity);
+        }
       }
     }
   }
