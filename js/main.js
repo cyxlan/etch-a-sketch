@@ -35,14 +35,14 @@ function colourSquare(e) {
     // if the current square has not been coloured yet
     if (currentSquareColour === '') {
       // start the opacity at 10%
-      newSquareColour = changeOpacity(colour, 0.1);
+      newSquareColour = changeOpacity(newSquareColour, 0.1);
     }
     else {
       let currentOpacity = getOpacity(currentSquareColour);
       if (currentOpacity !== 1.0) {
         // increase the opacity by 10% (round to avoid decimal math issues)
         let newOpacity = (currentOpacity + 0.1).toFixed(1)
-        newSquareColour = changeOpacity(colour, newOpacity);
+        newSquareColour = changeOpacity(newSquareColour, newOpacity);
       }
     }
   }
