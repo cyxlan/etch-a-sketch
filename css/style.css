@@ -18,5 +18,7 @@
 .grid-square {
   width: var(--square-size);
   height: var(--square-size);
+}
+.grid-lines {
   border: 1px solid #000;
 }

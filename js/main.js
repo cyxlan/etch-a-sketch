@@ -2,6 +2,7 @@ const root = document.querySelector(':root');
 const gridContainer = document.querySelector('.grid-container');
 const newGridBtn = document.querySelector('#new-grid');
 const clearGridBtn = document.querySelector('#clear-grid');
+const gridLinesBtn = document.querySelector('#grid-lines');
 const eraserBtn = document.querySelector('#eraser');
 const randomColourBtn = document.querySelector('#random-colour');
 const opacityBtn = document.querySelector('#opacity');
@@ -12,7 +13,7 @@ function createGrid(size) {
   // add amount of grid square divs for given grid size
   for (let i = 0; i < size * size; i++) {
     let gridSquare = document.createElement('div');
-    gridSquare.classList.add('grid-square');
+    gridSquare.classList.add('grid-square','grid-lines');
     gridContainer.appendChild(gridSquare);
   }
   // return list of new grid squares
@@ -134,6 +135,12 @@ newGridBtn.addEventListener('click', () => {
 clearGridBtn.addEventListener('click', () => {
   gridSquares.forEach((square) => {
     square.style.backgroundColor = "";
+  })
+})
+
+gridLinesBtn.addEventListener('click', () => {
+  gridSquares.forEach((square) => {
+    square.classList.toggle('grid-lines');
   })
 })
 
