@@ -163,6 +163,7 @@ toggleableBtns.forEach((button) => {
   })
 })
 
+// when slider is changed, update grid size & label under slider
 slider.addEventListener("input", (e) => {
   gridSize = e.target.value;
   gridSizeLabel.textContent = gridSize + " x " + gridSize;
