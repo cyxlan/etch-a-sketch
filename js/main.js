@@ -6,7 +6,7 @@ const clearGridBtn = document.querySelector('#clear-grid');
 const gridLinesBtn = document.querySelector('#grid-lines');
 const eraserBtn = document.querySelector('#eraser');
 const randomColourBtn = document.querySelector('#random-colour');
-const opacityBtn = document.querySelector('#opacity');
+const translucentBtn = document.querySelector('#translucent');
 
 function createGrid(size) {
   // set new grid square size
@@ -35,7 +35,7 @@ function colourSquare(e) {
   else {
     newSquareColour = colour;
   }
-  if (opacityOn) {
+  if (translucentOn) {
     let currentSquareColour = square.style.backgroundColor;
     // if the current square has not been coloured yet
     if (currentSquareColour === '') {
@@ -131,7 +131,7 @@ let colour = 'rgb(0,0,0)';
 let linesOn = true;
 let eraserOn = false;
 let randomOn = false;
-let opacityOn = false;
+let translucentOn = false;
 let gridSize = 16;
 gridSquares = createGrid(gridSize);
 colourSquaresOnHover();
@@ -177,8 +177,8 @@ randomColourBtn.addEventListener('click', () => {
   colourSquaresOnHover();
 })
 
-opacityBtn.addEventListener('click', () => {
-  opacityOn = !opacityOn;
-  opacityBtn.classList.toggle('active');
+translucentBtn.addEventListener('click', () => {
+  translucentOn = !translucentOn;
+  translucentBtn.classList.toggle('active');
   colourSquaresOnHover();
 })
