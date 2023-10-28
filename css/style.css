@@ -54,6 +54,7 @@ h1 {
   justify-content: center;
   gap: 15px;
 }
+/* hide colour picker & style swatch circle as replacement */
 #colour-picker {
   visibility: hidden;
 }
