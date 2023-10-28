@@ -45,7 +45,7 @@ h1 {
   gap: 30px;
 }
 .settings-right {
-  gap: 15px;
+  gap: 25px;
 }
 
 #colour-picker-btn {
@@ -69,19 +69,19 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   width: 90%;
 }
 .slider-container label {
-  font-size: 22px;
+  font-size: 24px;
 }
 .slider {
   appearance: none;
   outline: none;
   width: 100%;
-  height: 5px;
+  height: 8px;
   background: #b3b8b1;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 /* these will only work when webkit & moz are declared separately */
 .slider::-webkit-slider-thumb {
