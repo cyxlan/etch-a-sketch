@@ -71,23 +71,6 @@ function colourSquaresOnHover() {
   })
 }
 
-function getGridSize() {
-  gridSize = prompt('Enter side length of new grid (1-100):');
-  // if user clicked cancel, end function
-  if (gridSize === null) {
-    return;
-  }
-  else {
-    gridSize = Number(gridSize);
-    // if value is not an integer or not between 1-100, alert user & prompt again
-    if (!Number.isInteger(gridSize) || !(gridSize > 0 && gridSize <= 100)) {
-      alert("Please enter an integer from 1-100.")
-      gridSize = getGridSize();
-    }
-  }
-  return gridSize;
-}
-
 function getRandomColour() {
   // get a random integer between 0-255
   function getRandomValue() {
@@ -145,17 +128,6 @@ colourPicker.addEventListener('change', () => {
   colourPickerSwatch.style.backgroundColor = colour;
 })
 
-newGridBtn.addEventListener('click', () => {
-  gridSize = getGridSize();
-  // if user entered a size
-  if (gridSize !== undefined) {
-    // remove existing grid squares
-    gridContainer.replaceChildren();
-    gridSquares = createGrid(gridSize);
-    colourSquaresOnHover();
-  }
-})
-
 clearGridBtn.addEventListener('click', () => {
   gridSquares.forEach((square) => {
     square.style.backgroundColor = "";
@@ -191,3 +163,10 @@ slider.addEventListener("input", (e) => {
   gridSize = e.target.value;
   gridSizeLabel.textContent = gridSize + " x " + gridSize;
 });
+
+newGridBtn.addEventListener('click', () => {
+  // remove existing grid squares
+  gridContainer.replaceChildren();
+  gridSquares = createGrid(gridSize);
+  colourSquaresOnHover();
+})
