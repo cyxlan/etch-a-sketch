@@ -10,6 +10,7 @@ const translucentBtn = document.querySelector('#translucent');
 const newGridBtn = document.querySelector('#new-grid');
 const slider = document.querySelector('#grid-size-slider')
 const gridSizeLabel = document.querySelector('.slider-container label');
+const toggleableBtns = [gridLinesBtn, eraserBtn, randomColourBtn, translucentBtn];
 
 function createGrid(size) {
   // set new grid square size
@@ -139,24 +140,27 @@ gridLinesBtn.addEventListener('click', () => {
     square.classList.toggle('grid-lines');
   })
   linesOn = !linesOn;
-  gridLinesBtn.classList.toggle('active');
 })
 
 eraserBtn.addEventListener('click', () => {
   eraserOn = !eraserOn;
-  eraserBtn.classList.toggle('active');
 })
 
 randomColourBtn.addEventListener('click', () => {
   randomOn = !randomOn;
-  randomColourBtn.classList.toggle('active');
   colourSquaresOnHover();
 })
 
 translucentBtn.addEventListener('click', () => {
   translucentOn = !translucentOn;
-  translucentBtn.classList.toggle('active');
   colourSquaresOnHover();
+})
+
+// when toggleable button (grid lines, eraser, random colour, translucent) is clicked, toggle active state
+toggleableBtns.forEach((button) => {
+  button.addEventListener('click', () => {
+    button.classList.toggle('active');
+  })
 })
 
 slider.addEventListener("input", (e) => {
