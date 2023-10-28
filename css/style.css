@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@600;800&display=swap');
 
 :root {
   --square-size: calc(600px / 16);
@@ -6,9 +6,11 @@
 * {
   box-sizing: border-box;
 }
+h1, button {
+  font-family: 'Playpen Sans', sans-serif;
+}
 
 h1 {
-  font-family: 'Playpen Sans', sans-serif;
   text-align: center;
   font-size: 72px;
   font-weight: 800;
@@ -18,17 +20,35 @@ h1 {
 .container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
   /* compensate for settings container */
-  margin-left: -200px;
+  margin-left: -300px;
 }
 
 .settings {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
-  width: 200px;
+  gap: 30px;
+  width: 250px;
+}
+.button {
+  width: 250px;
+  background-color: #fff;
+  height: 60px;
+  border: 3px solid black;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.button,
+input[type="color"] {
+  transition: all 100ms ease-out;
+}
+.button:hover,
+input[type="color"]:hover {
+  cursor: pointer;
+  transform: scale(110%);
 }
 
 .grid-container {
@@ -39,6 +59,7 @@ h1 {
   border: 1px solid #000;
   display: flex;
   flex-wrap: wrap;
+  background-color: #fff;
 }
 .grid-square {
   width: var(--square-size);
