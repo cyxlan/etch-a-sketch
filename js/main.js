@@ -2,12 +2,14 @@ const root = document.querySelector(':root');
 const gridContainer = document.querySelector('.grid-container');
 const colourPicker = document.querySelector('#colour-picker');
 const colourPickerSwatch = document.querySelector('#colour-picker-swatch');
-const newGridBtn = document.querySelector('#new-grid');
 const clearGridBtn = document.querySelector('#clear-grid');
 const gridLinesBtn = document.querySelector('#grid-lines');
 const eraserBtn = document.querySelector('#eraser');
 const randomColourBtn = document.querySelector('#random-colour');
 const translucentBtn = document.querySelector('#translucent');
+const newGridBtn = document.querySelector('#new-grid');
+const slider = document.querySelector('#grid-size-slider')
+const gridSizeLabel = document.querySelector('.slider-container label');
 
 function createGrid(size) {
   // set new grid square size
@@ -184,3 +186,8 @@ translucentBtn.addEventListener('click', () => {
   translucentBtn.classList.toggle('active');
   colourSquaresOnHover();
 })
+
+slider.addEventListener("input", (e) => {
+  gridSize = e.target.value;
+  gridSizeLabel.textContent = gridSize + " x " + gridSize;
+});
