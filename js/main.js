@@ -163,36 +163,22 @@ gridLinesBtn.addEventListener('click', () => {
     square.classList.toggle('grid-lines');
   })
   linesOn = !linesOn;
+  gridLinesBtn.classList.toggle('active');
 })
 
 eraserBtn.addEventListener('click', () => {
-  if (!eraserOn) {
-    eraserBtn.textContent = 'Pen';
-  }
-  else {
-    eraserBtn.textContent = 'Eraser';
-  }
   eraserOn = !eraserOn;
+  eraserBtn.classList.toggle('active');
 })
 
 randomColourBtn.addEventListener('click', () => {
-  if (!randomOn) {
-    randomColourBtn.textContent = 'Random colour off';
-  }
-  else {
-    randomColourBtn.textContent = 'Random colour';
-  }
   randomOn = !randomOn;
+  randomColourBtn.classList.toggle('active');
   colourSquaresOnHover();
 })
 
 opacityBtn.addEventListener('click', () => {
-  if (!opacityOn) {
-    opacityBtn.textContent = 'Opacity off';
-  }
-  else {
-    opacityBtn.textContent = 'Opacity'
-  }
   opacityOn = !opacityOn;
+  opacityBtn.classList.toggle('active');
   colourSquaresOnHover();
 })

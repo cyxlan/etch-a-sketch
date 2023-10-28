@@ -59,6 +59,10 @@ input[type="color"]:hover {
   cursor: pointer;
   transform: scale(110%);
 }
+.button.active {
+  background-color: var(--dark-blue);
+  color: #fff;
+}
 
 .grid-container {
   /* add border to outside, so grid squares fit inside */
