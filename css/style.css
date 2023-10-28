@@ -9,7 +9,7 @@
 * {
   box-sizing: border-box;
 }
-h1, button {
+h1, button, body {
   font-family: 'Playpen Sans', sans-serif;
   color: var(--dark-blue);
 }
@@ -42,6 +42,24 @@ h1 {
   gap: 30px;
   width: 250px;
 }
+
+#colour-picker-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+#colour-picker {
+  visibility: hidden;
+}
+#colour-picker-swatch {
+  background-color: #000;
+  border: 3px solid black;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
 .button {
   width: 250px;
   background-color: var(--light-blue);
@@ -50,18 +68,22 @@ h1 {
   font-size: 20px;
   font-weight: 600;
 }
-.button,
-input[type="color"] {
-  transition: all 100ms ease-out;
-}
-.button:hover,
-input[type="color"]:hover {
-  cursor: pointer;
-  transform: scale(110%);
-}
 .button.active {
   background-color: var(--dark-blue);
   color: #fff;
+}
+.button,
+#colour-picker-btn {
+  transition: all 100ms ease-out;
+}
+.button:hover,
+#colour-picker-btn:hover {
+  cursor: pointer;
+  transform: scale(110%);
+}
+/* override default */
+#colour-picker-btn label {
+  cursor: pointer;
 }
 
 .grid-container {

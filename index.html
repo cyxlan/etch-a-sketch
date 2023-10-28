@@ -12,7 +12,12 @@
   <h1>Etch-a-Sketch</h1>
   <div class="container">
     <div class="settings">
-      <input type="color" id="colour-picker">
+      <label for="colour-picker" id="colour-picker-btn" class="button">
+        Custom colour
+        <div id="colour-picker-swatch">
+          <input type="color" id="colour-picker">
+        </div>
+      </label>
       <button id="new-grid" class="button">New grid</button>
       <button id="clear-grid" class="button">Clear grid</button>
       <button id="grid-lines" class="button active">Grid lines</button>

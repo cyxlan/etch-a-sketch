@@ -1,6 +1,7 @@
 const root = document.querySelector(':root');
 const gridContainer = document.querySelector('.grid-container');
 const colourPicker = document.querySelector('#colour-picker');
+const colourPickerSwatch = document.querySelector('#colour-picker-swatch');
 const newGridBtn = document.querySelector('#new-grid');
 const clearGridBtn = document.querySelector('#clear-grid');
 const gridLinesBtn = document.querySelector('#grid-lines');
@@ -139,6 +140,7 @@ colourSquaresOnHover();
 // when colour picker is closed, update colour
 colourPicker.addEventListener('change', () => {
   colour = hexToRgb(colourPicker.value);
+  colourPickerSwatch.style.backgroundColor = colour;
 })
 
 newGridBtn.addEventListener('click', () => {
