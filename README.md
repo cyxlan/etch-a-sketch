@@ -8,8 +8,8 @@ Includes options for:
 - clear grid
 - toggle grid lines
 - toggle eraser
-- toggle randomized colour mode
-- toggle translucency mode (colour gets progressively darker)
+- toggle random colour mode: randomly generate different colour for each square
+- toggle translucency mode: each square's colour gets progressively darker with each pass over it (or lighter if eraser is on)
 - create new grid with custom size
 
 ## Applied skills
