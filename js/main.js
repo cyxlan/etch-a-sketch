@@ -14,7 +14,7 @@ const toggleableBtns = [gridLinesBtn, eraserBtn, randomColourBtn, translucentBtn
 
 function createGrid(size) {
   // set new grid square size
-  root.style.setProperty('--square-size', `calc(600px / ${size})`);
+  root.style.setProperty('--grid-template', `repeat(${size}, 1fr) / repeat(${size}, 1fr)`);
   // add amount of grid square divs for given grid size
   for (let i = 0; i < size * size; i++) {
     let gridSquare = document.createElement('div');

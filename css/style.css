@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@600;800&display=swap');
 
 :root {
-  --square-size: calc(600px / 16);
+  --grid-template: repeat(16, 1fr) / repeat(16, 1fr);
   --beige: #f1faee;
   --light-blue: #a8dadc;
   --dark-blue: #1d3557;
@@ -143,13 +143,9 @@ h1 {
   box-sizing: content-box;
   width: 600px;
   height: 600px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template: var(--grid-template);
   background-color: var(--white);
-}
-.grid-square {
-  width: var(--square-size);
-  height: var(--square-size);
 }
 .grid-lines {
   border: 1px solid var(--black);
