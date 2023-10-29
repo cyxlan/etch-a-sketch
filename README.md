@@ -2,6 +2,7 @@
 [Live preview](https://cyxlan.github.io/etch-a-sketch/)
 
 Etch-a-sketch inspired browser sketchpad that paints squares of a grid as you hover the mouse over them.
+
 Includes options for:
 - custom colour
 - clear grid
